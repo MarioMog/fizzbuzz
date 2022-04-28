@@ -75,4 +75,26 @@ describe("Suit test for ExplorerController", () => {
         const res = ExplorerController.getExplorersUsernamesByMission("java");
         expect(res).toEqual(expectedRes);
     });
+
+    
+    test("2.1) getTrickInNumber score isnt a number", () => {
+        const res = ExplorerController.getTrickInNumber("a");
+        expect(res).toMatch("param number isnt a number");
+    });
+    test("2.2) getTrickInNumber score%3=score%5=0", () => {
+        const res = ExplorerController.getTrickInNumber(15);
+        expect(res).toMatch("FIZZBUZZ");
+    });
+    test("2.1) getTrickInNumber score%3=0", () => {
+        const res = ExplorerController.getTrickInNumber(9);
+        expect(res).toMatch("FIZZ");
+    });
+    test("2.3) getTrickInNumber score%5=0", () => {
+        const res = ExplorerController.getTrickInNumber(10);
+        expect(res).toMatch("BUZZ");
+    });
+    test("2.4) getTrickInNumber score%3!=0 & score%5=0", () => {
+        const res = ExplorerController.getTrickInNumber(1);
+        expect(res).toBe(1);
+    });
 });
