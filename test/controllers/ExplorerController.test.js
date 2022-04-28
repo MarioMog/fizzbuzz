@@ -75,9 +75,4 @@ describe("Suit test for ExplorerController", () => {
         const res = ExplorerController.getExplorersUsernamesByMission("java");
         expect(res).toEqual(expectedRes);
     });
-    test("`3.4`) Warning -- This is the breaking change -- ", () => {
-        const expectedRes = ["Woopa6", "Woopa7", "Woopa8", "Woopa9", "Woopa10"];
-        const res = ExplorerController.getExplorersUsernamesByMission("node");
-        expect(res).toEqual(expectedRes);
-    });
 });
